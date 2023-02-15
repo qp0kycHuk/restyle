@@ -6,11 +6,516 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Worked</title>
+
+  <script>
+    const MEDIA_LG = 1199.98
+    const MEDIA_SM = 475.98
+  </script>
 </head>
 
 <body>
-  <header class="header"> </header>
- 
+  <header class="header">
+    <div class="header-logo">
+      <img src="img/logo.png" alt="">
+    </div>
+    <div class="header-sign text-body-2 fade-60">
+      Натяжные потолки, жалюзи, карнизы, <br>
+      люстры, светильники
+    </div>
+    <div class="header-soc">
+      <button class="btn btn--white-bg btn-icon btn-small">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#telegramm" />
+        </svg>
+      </button>
+      <button class="btn btn--white-bg btn-icon btn-small">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#vk" />
+        </svg>
+      </button>
+    </div>
+    <a href="javascript:;" class="header-phone btn btn--link">
+      <svg class="icon mr-sm-1 text-h6">
+        <use xlink:href="img/icons.svg#phone" />
+      </svg>
+      +7 (918) 001-18-19
+    </a>
+  </header>
+
+  <section class="started">
+    <div class="started-content">
+      <div class="started-title">
+        Натяжные потолки <br>
+        любой сложности
+      </div>
+      <div class="started-subtitle">Натяжные потолки, жалюзи, карнизы, люстры, светильники</div>
+      <div class="started-list">
+        <div class="started-list-item">
+          <img src="img/circle-check.svg" class="mr-2" alt="">
+          Бесплатный выезд на замер
+        </div>
+        <div class="started-list-item">
+          <img src="img/circle-check.svg" class="mr-2" alt="">
+          Доступная стоимость всех услуг
+        </div>
+        <div class="started-list-item">
+          <img src="img/circle-check.svg" class="mr-2" alt="">
+          Натяжные потолки любой сложности
+        </div>
+      </div>
+      <div class="started-gift">
+        <div class="started-gift-title text-body-0 text--bold mb-8">
+          Оставьте заявку до 30 февраля <br>
+          и получите подарок от нас!
+        </div>
+        <button class="started-gift-btn btn btn--contur"><span>Оставить заявку</span></button>
+      </div>
+    </div>
+    <div class="started-img">
+      <img src="img/started.png" alt="">
+    </div>
+  </section>
+
+  <section class="qwiz">
+    <div class="section-header">
+      <div class="qwiz-title title text--center mb-2">Получите бесплатный рассчет</div>
+      <div class="qwiz-subtitle fade-80 text--center text-small text-sm-body-1">Просто ответье на 7 простых вопросов</div>
+    </div>
+
+    <div class="qwiz-block">
+      <div class="qwiz-content">
+        <div class="qwiz-slider swiper">
+          <div class="swiper-wrapper">
+            <% for(let i=0; i < 3; i++){ %>
+              <div class="swiper-slide">
+                <div class="text-subtitle-2 text-sm-h4 mb-4 mb-sm-8">
+                  Какая услуга вам требуется?
+                </div>
+                <div class="qwiz-fields swiper-no-swiping">
+                  <% for(let i=0; i < 10; i++){ %>
+                    <label class="form-field form-checkbox">
+                      <input type="checkbox" class="form-input-checkbox">
+                      <div class="form-checkbox-target">
+                        <svg class="icon">
+                          <use xlink:href="./img/icons.svg#gal-ochka" />
+                        </svg>
+                      </div>
+                      <div class="text-body-2 text-sm-body-1 ml-2">Обычные(мат, сатин, глянец)</div>
+                    </label>
+                    <% } %>
+                </div>
+              </div>
+              <% } %>
+          </div>
+        </div>
+        <div class="qwiz-btns">
+          <button class="qwiz-prev btn btn--contur btn-icon">
+            <span>
+              <svg class="icon">
+                <use xlink:href="img/icons.svg#arrow-left" />
+              </svg>
+            </span>
+          </button>
+          <button class="qwiz-next btn btn--contur">
+            <span>Следующий</span>
+          </button>
+        </div>
+      </div>
+      <div class="qwiz-img swiper">
+        <div class="swiper-wrapper">
+          <div class="qwiz-img-item image image--box swiper-slide">
+            <img src="img/qwiz-img-1.jpg" alt="">
+          </div>
+          <div class="qwiz-img-item image image--box swiper-slide">
+            <img src="img/qwiz-img-2.jpg" alt="">
+          </div>
+          <div class="qwiz-img-item image image--box swiper-slide">
+            <img src="img/qwiz-img-3.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    new Swiper('.qwiz-img', {
+      effect: "creative",
+      speed: 500,
+      touchRatio: 0,
+      slidesPerView: 1,
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -400],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+      },
+      navigation: {
+        prevEl: '.qwiz-prev',
+        nextEl: '.qwiz-next'
+      }
+    })
+
+    new Swiper('.qwiz-slider', {
+      effect: "creative",
+      speed: 500,
+      touchRatio: 0,
+      slidesPerView: 1,
+      creativeEffect: {
+        prev: {
+
+          translate: ["-120%", 0, -500],
+        },
+        next: {
+          translate: ["140%", 0, -500],
+        },
+      },
+      navigation: {
+        prevEl: '.qwiz-prev',
+        nextEl: '.qwiz-next'
+      }
+    })
+    
+  </script>
+
+
+  <section class="examples">
+    <div class="section-header">
+      <div class="examples-title title text--center mb-2">Примеры работ</div>
+    </div>
+    <div class="section-header">
+      <div class="examples-tabs flex-wrap">
+        <button class="examples-tab btn btn--light">
+          <svg class="icon mr-2">
+            <use xlink:href="img/icons.svg#bed" />
+          </svg>
+          Спальня
+        </button>
+        <button class="examples-tab btn btn--light">
+          <svg class="icon mr-2">
+            <use xlink:href="img/icons.svg#livingroom" />
+          </svg>
+          Гостиная
+        </button>
+        <button class="examples-tab btn btn--light">
+          <svg class="icon mr-2">
+            <use xlink:href="img/icons.svg#closet" />
+          </svg>
+          Прихожая
+        </button>
+        <button class="examples-tab btn btn--light">
+          <svg class="icon mr-2">
+            <use xlink:href="img/icons.svg#citchen" />
+          </svg>
+          Кухня
+        </button>
+        <button class="examples-tab btn btn--light">
+          <svg class="icon mr-2">
+            <use xlink:href="img/icons.svg#bath" />
+          </svg>
+          Ванная
+        </button>
+      </div>
+    </div>
+    <div class="examples-items-slider slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <% for(let i=0; i < 5; i++){ %>
+            <div class="examples-item swiper-slide">
+              <div class="examples-item-gallery top-no-swiping">
+                <div class="examples-item-slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide examples-item-slide">
+                      <img src="img/qwiz-img-1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide examples-item-slide">
+                      <img src="img/qwiz-img-2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide examples-item-slide">
+                      <img src="img/qwiz-img-3.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="examples-item-thumbs swiper">
+                  <div class="swiper-wrapper">
+                    <div class="examples-item-thumb swiper-slide card-action waved waved-light">
+                      <img src="img/qwiz-img-3.jpg" alt="">
+                    </div>
+                    <div class="examples-item-thumb swiper-slide card-action waved waved-light">
+                      <img src="img/qwiz-img-1.jpg" alt="">
+                    </div>
+                    <div class="examples-item-thumb swiper-slide card-action waved waved-light">
+                      <img src="img/qwiz-img-2.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="examples-item-content">
+                <div class="examples-item-title text-subtitle-2 text-sm-h6 text-md-h2 mb-4">Монтаж потолка в спальне</div>
+                <div class="examples-item-props">
+                  <div class="examples-item-prop text-body-2 flex flex-align-center">
+                    <svg class="icon mr-1">
+                      <use xlink:href="img/icons.svg#border-all" />
+                    </svg>
+                    <span class="fade-80"> Площадь: </span>
+                    102 м2
+                  </div>
+                  <div class="examples-item-prop text-body-2 flex flex-align-center">
+                    <svg class="icon mr-1">
+                      <use xlink:href="img/icons.svg#clock" />
+                    </svg>
+                    <span class="fade-80"> Срок: </span>
+                    4 мес
+                  </div>
+                  <div class="examples-item-prop text-body-2 flex flex-align-center">
+                    <svg class="icon mr-1">
+                      <use xlink:href="img/icons.svg#stack-2" />
+                    </svg>
+                    <span class="fade-80"> Полотно: </span>
+                    MSD Classic
+                  </div>
+                </div>
+                <div class="examples-item-review mt-7 mb-5">
+                  <div class="flex flex-align-center">
+                    <div class="image image--box image--round icon text-h2 mr-3">
+                      <img
+                        src="https://sun9-20.userapi.com/impg/sjYHDYMlqrDwr9LcQ8iMi7RmWnbIvdXo67HOug/yhDbd4nqXhM.jpg?size=1620x2160&quality=95&sign=3612731f6055a97a1ae965ba31193ffe&type=album"
+                        alt="">
+                    </div>
+                    <div class="text--demibold flex flex-align-center">
+                      <span class="fade-40 examples-item-review-quote mr-1">“</span>
+                      Отзыв клиента о работе
+                    </div>
+                  </div>
+                  <div class="text-body-2 fade-80 mt-3 lh-1-5">
+                    Очень круто сделали, экологичные материалы, возможность легко спрятать неровные поверхности и
+                    дефекты,
+                    удобство при эксплуатации, длительный срок службы, доступная стоимость.
+                  </div>
+                </div>
+                <form class="examples-item-form w-100 mt-auto">
+                  <div class="text--demibold">Хотите также? Оставьте заявку</div>
+                  <div class="text-body-2 fade-60 mb-5">Мы перезвоним и уточним все детали</div>
+                  <div class="d-sm-flex w-100">
+                    <div class="form-field flex-grow">
+                      <div class="form-input-cover ">
+                        <input type="tel" class="form-input top-no-swiping" placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _"
+                          required name="phone">
+                      </div>
+                    </div>
+                    <button type="submit"
+                      class="btn btn--contur mt-3 w-100 top-no-swiping d-sm-none"><span>Отправить</span></button>
+                    <button type="submit"
+                      class="btn btn--white btn--contur ml-4 top-no-swiping d-none d-sm-flex"><span>Отправить</span></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <% } %>
+        </div>
+      </div>
+      <button class="btn btn--white-bg btn-fab slider-prev btn-large d-none d-lg-flex">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#to-left" />
+        </svg>
+      </button>
+      <button class="btn btn--white-bg btn-fab slider-next btn-large d-none d-lg-flex">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#to-right" />
+        </svg>
+      </button>
+      <div class="examples-items-pagination"></div>
+    </div>
+
+  </section>
+  <script>
+
+    new Swiper('.examples-items-slider>.swiper', {
+      speed: 500,
+      spaceBetween: 60,
+      slidesPerView: 1,
+      noSwipingClass: 'top-no-swiping',
+      pagination: {
+        el: '.examples-items-pagination',
+        clickable: true
+      },
+      navigation: {
+        prevEl: '.examples-items-slider .slider-prev',
+        nextEl: '.examples-items-slider .slider-next',
+      }
+    })
+
+
+    const items = document.querySelectorAll('.examples-item')
+    Array.from(items).forEach((item) => {
+      const thumbs = new Swiper(item.querySelector('.examples-item-thumbs'), {
+        speed: 500,
+        slidesPerView: 4,
+        spaceBetween: 24,
+
+      })
+      new Swiper(item.querySelector('.examples-item-slider'), {
+        speed: 500,
+        effect: 'slide',
+        spaceBetween: 16, 
+        slidesPerView: 1.25,
+
+        thumbs: {
+          swiper: thumbs
+        },
+        breakpoints: {
+          [MEDIA_SM]: {
+            slidesPerView: 1,
+          },
+          [MEDIA_LG]: {
+            effect: "creative",
+            slidesPerView: 1,
+            creativeEffect: {
+              spaceBetween: 0,
+              prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+              },
+              next: {
+                translate: ["120%", 0, 0],
+              },
+            },
+          }
+        }
+
+      })
+    })
+
+  </script>
+
+  <section class="services">
+    <div class="section-header">
+      <div class="title text--center mb-2">Наши услуги</div>
+      <div class="fade-80 text--center text-small text-sm-body-1">В нашем арсенале имеется широкий спектр профессиональных услуг</div>
+    </div>
+    <div class="grid grid-spacing-lg-7">
+      <% for(let i=0; i < 12; i++){ %>
+        <div class="grid-col-6 grid-col-md-4 grid-col-lg-3">
+          <div class="services-item card-action">
+            <div class="services-item-img">
+              <img src="img/test/test-<%= Math.floor(Math.random() * 27) %>.gif" alt="">
+            </div>
+            <div class="services-item-content">
+              <div class="text-body-2 text-sm-body-1 fade-80 mb-1">Cатин, мат, глянц</div>
+              <div class="text-body-0 text-sm-subtitle-1 text--bold mb-3 mb-sm-6">От 20 000 ₽</div>
+              <button
+                class="services-item-btn btn btn--contur px-1 px-sm-6 w-100 w-sm-auto"><span>Консультация</span></button>
+
+            </div>
+          </div>
+        </div>
+        <% } %>
+    </div>
+  </section>
+
+
+  <section class="facture">
+    <div class="section-header">
+      <div class="title text--center mb-2">Любая фактура</div>
+      <div class="fade-80 text--center text-small text-sm-body-1">Сатиновый, матовый или глянцевый, что вы выберете? Мы сделаем как вы хотите!
+      </div>
+    </div>
+    <div class="grid flex-justify-center grid-spacing-md-7">
+      <div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
+        <div class="facture-item">
+          <div class="facture-item-img">
+            <img src="img/facture/satin.jpg" alt="">
+          </div>
+          <div class="facture-item-content">
+            <div>
+              <div class="text-subtitle-1 text--bold mb-4">Сатиновые</div>
+              <button class="btn btn--white btn--contur">
+                <span>Заказать замер</span>
+              </button>
+            </div>
+            <div class="facture-item-min">
+              <img src="img/facture/satin-preview.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
+        <div class="facture-item">
+          <div class="facture-item-img">
+            <img src="img/facture/mat.jpg" alt="">
+          </div>
+          <div class="facture-item-content">
+            <div>
+              <div class="text-subtitle-1 text--bold mb-4">Матовые</div>
+              <button class="btn btn--white btn--contur">
+                <span>Заказать замер</span>
+              </button>
+            </div>
+            <div class="facture-item-min">
+              <img src="img/facture/mat-preview.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
+        <div class="facture-item">
+          <div class="facture-item-img">
+            <img src="img/facture/glyanets.jpg" alt="">
+          </div>
+          <div class="facture-item-content">
+            <div>
+              <div class="text-subtitle-1 text--bold mb-4">Глянцевые</div>
+              <button class="btn btn--white btn--contur">
+                <span>Заказать замер</span>
+              </button>
+            </div>
+            <div class="facture-item-min">
+              <img src="img/facture/glyanets-preview.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="canvas">
+    <div class="section-header">
+      <div class="title text--center mb-2">Полотна</div>
+      <div class="fade-80 text--center text-small text-sm-body-1">Полотна от лучших производителей со всего мира</div>
+    </div>
+    <div class="grid grid-spacing-md-7">
+      <% for(let i=0; i < 8; i++){ %>
+        <div class="grid-col-6 grid-col-md-4 grid-col-lg-3">
+          <div class="canvas-item card-action">
+            <div class="canvas-item-img">
+              <img src="img/test/test-<%= Math.floor(Math.random() * 27) %>.gif" alt="">
+            </div>
+            <div class="canvas-item-content">
+              <div class="mb-1 text-body-2 text-sm-body-1">MSD Classic</div>
+              <div class="canvas-item-cost text-body-0 text-sm-subtitle-1 text--bold mb-4">от 349 руб/м²</div>
+              <div class="canvas-item-country mb-3 w-100">
+                <img src="img/flag/taiwan.png" alt="">
+                Тайвань
+              </div>
+              <div class="text-small text-sm-body-2 fade-60 mb-1">Ширина: до 505 см</div>
+              <div class="text-small text-sm-body-2 fade-60">Плотность: 180-200 мк</div>
+
+              <div class="mt-auto"></div>
+              <button
+                class="canvas-item-btn btn btn--white btn--contur mt-3 mt-sm-7 px-1 px-sm-6 w-100 w-sm-auto"><span>Консультация</span></button>
+
+            </div>
+          </div>
+        </div>
+        <% } %>
+    </div>
+  </section>
+
+  <section class="pray">
+
+  </section>
+
   <footer class="footer"> </footer>
 </body>
 

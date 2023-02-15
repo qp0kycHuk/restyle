@@ -1,6 +1,5 @@
 import { Fancybox } from "@fancyapps/ui";
 import ru from "@fancyapps/ui/src/Fancybox/l10n/ru"
-import inputmask from "./inputmask";
 
 const init = () => {
   Fancybox.defaults.trapFocus = false
@@ -15,7 +14,6 @@ const init = () => {
     mainClass: 'fancybox-custom-modal',
     on: {
       done: (fancybox, slide) => {
-        inputmask.init(slide.$el)
       }
     }
   }

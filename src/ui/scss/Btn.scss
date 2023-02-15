@@ -1,12 +1,12 @@
-@mixin btnColor($name, $accent:#fff) {
+@mixin btnColor($name, $accent: #fff) {
 	&--#{$name} {
-		--btn-color      : var(--color-#{$name});
+		--btn-color : var(--color-#{$name});
 		--btn-color-light: var(--color-#{$name}-10);
-		--btn-text       : #{$accent};
+		--btn-text : #{$accent};
 
 		@media (hover) {
 			&:hover {
-				--btn-color      : var(--color-#{$name}--dark);
+				--btn-color : var(--color-#{$name}--dark);
 				--btn-color-light: var(--color-#{$name}-20);
 			}
 		}
@@ -15,25 +15,27 @@
 
 .btn {
 	--btn-color-light: var(--color-text-20);
-	--btn-color      : var(--color-text);
-	--btn-text       : var(--bg3);
+	--btn-color: var(--color-text);
+	--btn-text: var(--bg3);
+	--btn-text-gradient: linear-gradient(270.31deg, rgba(79, 255, 128, 0.8) 0.13%, rgba(79, 255, 128, 0) 64.36%), #FCFF6D;
+	--btn-text-color: #fff;
 
-	background : none;
-	border     : none;
-	outline    : none;
+	background: none;
+	border: none;
+	outline: none;
 	user-select: none;
-	position   : relative;
+	position: relative;
 
-	display        : flex;
-	align-items    : center;
+	display: flex;
+	align-items: center;
 	justify-content: center;
 
-	--size       : 40px;
-	height       : var(--size);
-	padding      : 0 calc(var(--size) / 2);
-	border-radius: var(--radius-small);
+	--size: 46px;
+	height: var(--size);
+	padding: 0 calc(var(--size) / 2);
+	border-radius: 8px;
 
-	font-size  : 14px;
+	font-size: 14px;
 	font-family: var(--font-base);
 	font-weight: bold;
 
@@ -57,7 +59,7 @@
 
 	@media (hover) {
 		&:hover {
-			--btn-color      : var(--color-text--dark);
+			--btn-color: var(--color-text--dark);
 			--btn-color-light: var(--color-text-40);
 		}
 	}
@@ -72,12 +74,12 @@
 
 	// size
 	&-large {
-		--size   : 52px;
+		--size: 52px;
 		font-size: 16px;
 	}
 
 	&-small {
-		--size   : 28px;
+		--size: 32px;
 		font-size: 12px;
 	}
 
@@ -92,26 +94,28 @@
 
 
 	&--white {
-		--btn-color      : #fff;
-		--btn-color-light: rgba(255, 255, 255, 0.6);
-		--btn-text       : var(--color-text);
+		--btn-color: #fff;
+		--btn-color-light: rgba(255, 255, 255, 0.2);
+		--btn-text: var(--color-text);
+		--btn-text-gradient: linear-gradient(270.31deg, rgba(80, 215, 85, 0.8) 0.13%, rgba(243, 223, 117, 0) 64.36%), #0A0A0A;
+		--btn-text-color: var(--color-text);
 
 		@media (hover) {
 			&:hover {
-				--btn-color      : #fff;
-				--btn-color-light: rgba(255, 255, 255, 0.7);
+				--btn-color: #fff;
+				--btn-color-light: rgba(255, 255, 255, 0.3);
 			}
 		}
 	}
 
 	&--gray {
-		--btn-color      : rgba(49, 49, 49, 0.6);
+		--btn-color: rgba(49, 49, 49, 0.6);
 		--btn-color-light: #F5F7FB;
-		--btn-text       : #fff;
+		--btn-text: #fff;
 
 		@media (hover) {
 			&:hover {
-				--btn-color      : rgba(49, 49, 49, 0.6);
+				--btn-color: rgba(49, 49, 49, 0.6);
 				--btn-color-light: #eef0f5;
 			}
 		}
@@ -122,8 +126,8 @@
 
 	&--fill {
 		background: var(--btn-color);
-		color     : var(--btn-text);
-		border    : transparent;
+		color: var(--btn-text);
+		border: transparent;
 
 		&:focus:not(:active) {
 			background: var(--btn-color);
@@ -134,7 +138,7 @@
 
 	&--light {
 		background: var(--btn-color-light);
-		color     : var(--btn-color);
+		color: var(--btn-color);
 
 		&:focus:not(:active) {
 			box-shadow: 0 0 0 2px var(--btn-color);
@@ -144,28 +148,51 @@
 
 	&--contur {
 		background: transparent;
-		border    : 1px solid var(--btn-color);
-		color     : var(--btn-color);
+		border: 1px solid var(--btn-color);
+		color: var(--btn-color);
+
 
 		@media(hover) {
 			&:hover {
-				background: var(--btn-color-light);
+				background: var(--btn-color);
+				border-color: var(--btn-color);
+				color: var(--btn-text-color);
+
+				span {
+					background: var(--btn-text-gradient);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					background-clip: text;
+					text-fill-color: transparent;
+				}
 			}
 		}
 
 		&:focus:not(:active) {
-			background: var(--btn-color-light);
-			box-shadow: 0 0 0 1px var(--btn-color), 0 0 0 5px var(--btn-color-light);
+			background: var(--btn-color);
+			border-color: var(--btn-color);
+			color: var(--btn-text-color);
+
+			span {
+				background: var(--btn-text-gradient);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				text-fill-color: transparent;
+			}
+
+			box-shadow: 0 0 0 1px var(--btn-color),
+			0 0 0 5px var(--btn-color-light);
 		}
 	}
 
 	&--link {
 		padding: 0;
-		width  : auto;
-		height : auto;
+		width: auto;
+		height: auto;
 
 		background: transparent;
-		color     : var(--btn-color);
+		color: var(--btn-color);
 
 		// border-bottom: 1px solid var(--btn-color);
 		border-radius: 0;
@@ -198,13 +225,13 @@
 	// mod
 
 	&:disabled {
-		opacity       : 0.4;
+		opacity: 0.4;
 		pointer-events: none;
 	}
 
 	&-fab,
 	&-icon {
-		width  : var(--size);
+		width: var(--size);
 		padding: 0;
 	}
 
