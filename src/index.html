@@ -79,7 +79,8 @@
   <section class="qwiz">
     <div class="section-header">
       <div class="qwiz-title title text--center mb-2">Получите бесплатный рассчет</div>
-      <div class="qwiz-subtitle fade-80 text--center text-small text-sm-body-1">Просто ответье на 7 простых вопросов</div>
+      <div class="qwiz-subtitle fade-80 text--center text-small text-sm-body-1">Просто ответье на 7 простых вопросов
+      </div>
     </div>
 
     <div class="qwiz-block">
@@ -158,25 +159,17 @@
     })
 
     new Swiper('.qwiz-slider', {
-      effect: "creative",
+      watchSlidesProgress: true,
       speed: 500,
       touchRatio: 0,
       slidesPerView: 1,
-      creativeEffect: {
-        prev: {
 
-          translate: ["-120%", 0, -500],
-        },
-        next: {
-          translate: ["140%", 0, -500],
-        },
-      },
       navigation: {
         prevEl: '.qwiz-prev',
         nextEl: '.qwiz-next'
       }
     })
-    
+
   </script>
 
 
@@ -252,7 +245,8 @@
                 </div>
               </div>
               <div class="examples-item-content">
-                <div class="examples-item-title text-subtitle-2 text-sm-h6 text-md-h2 mb-4">Монтаж потолка в спальне</div>
+                <div class="examples-item-title text-subtitle-2 text-sm-h6 text-md-h2 mb-4">Монтаж потолка в спальне
+                </div>
                 <div class="examples-item-props">
                   <div class="examples-item-prop text-body-2 flex flex-align-center">
                     <svg class="icon mr-1">
@@ -358,7 +352,7 @@
       new Swiper(item.querySelector('.examples-item-slider'), {
         speed: 500,
         effect: 'slide',
-        spaceBetween: 16, 
+        spaceBetween: 16,
         slidesPerView: 1.25,
 
         thumbs: {
@@ -392,7 +386,8 @@
   <section class="services">
     <div class="section-header">
       <div class="title text--center mb-2">Наши услуги</div>
-      <div class="fade-80 text--center text-small text-sm-body-1">В нашем арсенале имеется широкий спектр профессиональных услуг</div>
+      <div class="fade-80 text--center text-small text-sm-body-1">В нашем арсенале имеется широкий спектр
+        профессиональных услуг</div>
     </div>
     <div class="grid grid-spacing-lg-7">
       <% for(let i=0; i < 12; i++){ %>
@@ -418,7 +413,8 @@
   <section class="facture">
     <div class="section-header">
       <div class="title text--center mb-2">Любая фактура</div>
-      <div class="fade-80 text--center text-small text-sm-body-1">Сатиновый, матовый или глянцевый, что вы выберете? Мы сделаем как вы хотите!
+      <div class="fade-80 text--center text-small text-sm-body-1">Сатиновый, матовый или глянцевый, что вы выберете? Мы
+        сделаем как вы хотите!
       </div>
     </div>
     <div class="grid flex-justify-center grid-spacing-md-7">
