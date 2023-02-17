@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header animate__animated animate__fadeInDown">
     <div class="header-logo">
       <img src="img/logo.png" alt="">
     </div>
@@ -44,12 +44,13 @@
 
   <section class="started">
     <div class="started-content">
-      <div class="started-title">
+      <div class="started-title wow animate__fadeInLeft">
         Натяжные потолки <br>
         любой сложности
       </div>
-      <div class="started-subtitle">Натяжные потолки, жалюзи, карнизы, люстры, светильники</div>
-      <div class="started-list">
+      <div class="started-subtitle wow animate__fadeInLeft" data-wow-delay="0.1s">Натяжные потолки, жалюзи, карнизы,
+        люстры, светильники</div>
+      <div class="started-list wow animate__fadeInLeft">
         <div class="started-list-item">
           <img src="img/circle-check.svg" class="mr-2" alt="">
           Бесплатный выезд на замер
@@ -63,12 +64,13 @@
           Натяжные потолки любой сложности
         </div>
       </div>
-      <div class="started-gift">
+      <div class="started-gift wow animate__fadeInUp">
         <div class="started-gift-title text-body-0 text--bold mb-8">
           Оставьте заявку до 30 февраля <br>
           и получите подарок от нас!
         </div>
-        <button class="started-gift-btn btn btn--contur"><span>Оставить заявку</span></button>
+        <button data-fancybox-modal data-src="dialog-form.html" class="started-gift-btn btn btn--contur"><span>Оставить
+            заявку</span></button>
       </div>
     </div>
     <div class="started-img">
@@ -78,12 +80,13 @@
 
   <section class="qwiz">
     <div class="section-header">
-      <div class="qwiz-title title text--center mb-2">Получите бесплатный рассчет</div>
-      <div class="qwiz-subtitle fade-80 text--center text-small text-sm-body-1">Просто ответье на 7 простых вопросов
+      <div class="qwiz-title title text-sm--center mb- wow animate__fadeInUp2">Получите бесплатный рассчет</div>
+      <div class="qwiz-subtitle fade-80 text-sm--center text-small text-sm-body-1 wow animate__fadeInUp">Просто ответье
+        на 7 простых вопросов
       </div>
     </div>
 
-    <div class="qwiz-block">
+    <div class="qwiz-block wow animate__fadeInUp">
       <div class="qwiz-content">
         <div class="qwiz-slider swiper">
           <div class="swiper-wrapper">
@@ -107,6 +110,31 @@
                 </div>
               </div>
               <% } %>
+                <div class="swiper-slide">
+                  <div class="text-subtitle-2 text-sm-h2 mb-2">Отправить заявку</div>
+                  <div class="mb-5">
+                    Заполните данные и мы свяжемся с Вами
+                    в ближайшее время
+                  </div>
+                  <label class="form-field">
+                    <div class="text--demibold mb-2">Ваш телефон</div>
+                    <div class="form-input-cover">
+                      <input type="tel" class="form-input form-input-large" placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _">
+                    </div>
+                  </label>
+                  <label class="form-field mt-4">
+                    <div class="text--demibold mb-2">Ваше имя</div>
+                    <div class="form-input-cover">
+                      <input type="text" class="form-input form-input-large">
+                    </div>
+                  </label>
+                  <button class="btn btn--contur mt-4 mt-sm-8"><span>Заказать</span></button>
+                  <div class="mt-4 mt-sm-8 fade-60 text-small link-hover" data-fancybox-modal
+                    data-src="dialog-policy.html">
+                    Отправляя форму Вы даете согласие на обработку
+                    Ваших персональных данных
+                  </div>
+                </div>
           </div>
         </div>
         <div class="qwiz-btns">
@@ -133,51 +161,19 @@
           <div class="qwiz-img-item image image--box swiper-slide">
             <img src="img/qwiz-img-3.jpg" alt="">
           </div>
+          <div class="qwiz-img-item image image--box swiper-slide">
+            <img src="img/qwiz-img-3.jpg" alt="">
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <script>
-    new Swiper('.qwiz-img', {
-      effect: "creative",
-      speed: 500,
-      touchRatio: 0,
-      slidesPerView: 1,
-      creativeEffect: {
-        prev: {
-          shadow: true,
-          translate: [0, 0, -400],
-        },
-        next: {
-          translate: ["100%", 0, 0],
-        },
-      },
-      navigation: {
-        prevEl: '.qwiz-prev',
-        nextEl: '.qwiz-next'
-      }
-    })
-
-    new Swiper('.qwiz-slider', {
-      watchSlidesProgress: true,
-      speed: 500,
-      touchRatio: 0,
-      slidesPerView: 1,
-
-      navigation: {
-        prevEl: '.qwiz-prev',
-        nextEl: '.qwiz-next'
-      }
-    })
-
-  </script>
-
 
   <section class="examples">
     <div class="section-header">
-      <div class="examples-title title text--center mb-2">Примеры работ</div>
+      <div class="examples-title title text-sm--center mb-2 wow animate__fadeInUp">Примеры работ</div>
     </div>
-    <div class="section-header">
+    <div class="section-header wow animate__fadeInUp">
       <div class="examples-tabs flex-wrap">
         <button class="examples-tab btn btn--light">
           <svg class="icon mr-2">
@@ -211,7 +207,7 @@
         </button>
       </div>
     </div>
-    <div class="examples-items-slider slider">
+    <div class="examples-items-slider slider wow animate__fadeInUp">
       <div class="swiper">
         <div class="swiper-wrapper">
           <% for(let i=0; i < 5; i++){ %>
@@ -323,76 +319,17 @@
     </div>
 
   </section>
-  <script>
-
-    new Swiper('.examples-items-slider>.swiper', {
-      speed: 500,
-      spaceBetween: 60,
-      slidesPerView: 1,
-      noSwipingClass: 'top-no-swiping',
-      pagination: {
-        el: '.examples-items-pagination',
-        clickable: true
-      },
-      navigation: {
-        prevEl: '.examples-items-slider .slider-prev',
-        nextEl: '.examples-items-slider .slider-next',
-      }
-    })
-
-
-    const items = document.querySelectorAll('.examples-item')
-    Array.from(items).forEach((item) => {
-      const thumbs = new Swiper(item.querySelector('.examples-item-thumbs'), {
-        speed: 500,
-        slidesPerView: 4,
-        spaceBetween: 24,
-
-      })
-      new Swiper(item.querySelector('.examples-item-slider'), {
-        speed: 500,
-        effect: 'slide',
-        spaceBetween: 16,
-        slidesPerView: 1.25,
-
-        thumbs: {
-          swiper: thumbs
-        },
-        breakpoints: {
-          [MEDIA_SM]: {
-            slidesPerView: 1,
-          },
-          [MEDIA_LG]: {
-            effect: "creative",
-            slidesPerView: 1,
-            creativeEffect: {
-              spaceBetween: 0,
-              prev: {
-                shadow: true,
-                translate: [0, 0, -400],
-              },
-              next: {
-                translate: ["120%", 0, 0],
-              },
-            },
-          }
-        }
-
-      })
-    })
-
-  </script>
 
   <section class="services">
     <div class="section-header">
-      <div class="title text--center mb-2">Наши услуги</div>
-      <div class="fade-80 text--center text-small text-sm-body-1">В нашем арсенале имеется широкий спектр
+      <div class="title text-sm--center mb-2 wow animate__fadeInUp">Наши услуги</div>
+      <div class="fade-80 text-sm--center text-small text-sm-body-1 wow animate__fadeInUp">В нашем арсенале имеется широкий спектр
         профессиональных услуг</div>
     </div>
     <div class="grid grid-spacing-lg-7">
       <% for(let i=0; i < 12; i++){ %>
         <div class="grid-col-6 grid-col-md-4 grid-col-lg-3">
-          <div class="services-item card-action">
+          <div class="services-item card-action wow animate__fadeInUp">
             <div class="services-item-img">
               <img src="img/test/test-<%= Math.floor(Math.random() * 27) %>.gif" alt="">
             </div>
@@ -409,17 +346,17 @@
     </div>
   </section>
 
-
   <section class="facture">
     <div class="section-header">
-      <div class="title text--center mb-2">Любая фактура</div>
-      <div class="fade-80 text--center text-small text-sm-body-1">Сатиновый, матовый или глянцевый, что вы выберете? Мы
+      <div class="title text-sm--center mb-2 wow animate__fadeInUp">Любая фактура</div>
+      <div class="fade-80 text-sm--center text-small text-sm-body-1 wow animate__fadeInUp">Сатиновый, матовый или глянцевый, что вы выберете?
+        Мы
         сделаем как вы хотите!
       </div>
     </div>
     <div class="grid flex-justify-center grid-spacing-md-7">
       <div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
-        <div class="facture-item">
+        <div class="facture-item wow animate__fadeInLeft">
           <div class="facture-item-img">
             <img src="img/facture/satin.jpg" alt="">
           </div>
@@ -437,7 +374,7 @@
         </div>
       </div>
       <div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
-        <div class="facture-item">
+        <div class="facture-item wow animate__fadeInUp">
           <div class="facture-item-img">
             <img src="img/facture/mat.jpg" alt="">
           </div>
@@ -455,7 +392,7 @@
         </div>
       </div>
       <div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
-        <div class="facture-item">
+        <div class="facture-item wow animate__fadeInRight">
           <div class="facture-item-img">
             <img src="img/facture/glyanets.jpg" alt="">
           </div>
@@ -477,13 +414,14 @@
 
   <section class="canvas">
     <div class="section-header">
-      <div class="title text--center mb-2">Полотна</div>
-      <div class="fade-80 text--center text-small text-sm-body-1">Полотна от лучших производителей со всего мира</div>
+      <div class="title text-sm--center mb-2 wow animate__fadeInUp">Полотна</div>
+      <div class="fade-80 text-sm--center text-small text-sm-body-1 wow animate__fadeInUp">Полотна от лучших производителей со всего мира
+      </div>
     </div>
     <div class="grid grid-spacing-md-7">
       <% for(let i=0; i < 8; i++){ %>
         <div class="grid-col-6 grid-col-md-4 grid-col-lg-3">
-          <div class="canvas-item card-action">
+          <div class="canvas-item card-action wow animate__fadeInUp">
             <div class="canvas-item-img">
               <img src="img/test/test-<%= Math.floor(Math.random() * 27) %>.gif" alt="">
             </div>
@@ -511,12 +449,12 @@
   <section class="pray">
     <div class="pray-block">
       <div class="pray-block-content">
-        <div class="pray-title">
-          Работаем <br>
+        <div class="pray-title title wow animate__fadeInLeft">
+          Работаем <br class="d-none d-lg-block">
           на полную
         </div>
-        <div class="pray-subtitle text-subtitle-1 mb-7">Особенности нашей работы</div>
-        <div class="pray-prop">
+        <div class="pray-subtitle text-body-1 text--demibold text-lg-subtitle-1 mb-7 wow animate__fadeInLeft">Особенности нашей работы</div>
+        <div class="pray-prop wow animate__fadeInLeft">
           <div class="pray-prop-img">
             <img src="img/pray-prop-1.png" alt="">
           </div>
@@ -525,7 +463,7 @@
             с точностью до 1мм
           </div>
         </div>
-        <div class="pray-prop mt-3">
+        <div class="pray-prop mt-3 wow animate__fadeInLeft">
           <div class="pray-prop-img">
             <img src="img/pray-prop-2.png" alt="">
           </div>
@@ -534,7 +472,7 @@
             гипоаллергенны
           </div>
         </div>
-        <div class="pray-prop mt-3">
+        <div class="pray-prop mt-3 wow animate__fadeInLeft">
           <div class="pray-prop-img">
             <img src="img/pray-prop-3.png" alt="">
           </div>
@@ -543,25 +481,25 @@
             выдерживают потоп
           </div>
         </div>
-        <div class="text--demibold mb-4 mt-8">
+        <div class="text--demibold mb-4 mt-8 wow animate__fadeInUp">
           Наша компания занимается установкой
           натяжных потолков с 2011 года.
         </div>
-        <div>
+        <div class="text-body-2 text-md-body-1 wow animate__fadeInUp">
           За это время мы накопили огромный опыт
           работы с разными помещениями и готовы
           предложить Вам наилучшее решение
         </div>
       </div>
       <div class="pray-block-cards">
-        <div class="pray-block-clients">
+        <div class="pray-block-clients wow animate__fadeInDown">
           <div class="text--demibold mb-8">
             Более 12 000 <br>
             довольных клиентов
           </div>
           <img src="img/pray-block-clients.png" alt="">
         </div>
-        <div class="pray-block-card">
+        <div class="pray-block-card wow animate__fadeInRight">
           <div class="text--demibold mb-1">Хотите стать одним из них?</div>
           <div class="text-body-2">
             Просто оставьте заявку <br>
@@ -569,73 +507,73 @@
           </div>
           <button class="btn btn--white btn--contur mt-5"><span>Отправить</span></button>
         </div>
-        <div class="pray-block-img">
+        <div class="pray-block-img wow animate__fadeInUp">
           <img src="img/pray.jpg" alt="">
         </div>
       </div>
     </div>
     <div class="section-header">
-      <div class="title text--center mb-2">Структура работы</div>
-      <div class="fade-80 text--center text-small text-sm-body-1">В нашем арсенале имеется широкий спектр
+      <div class="title text-sm--center mb-2 wow animate__fadeInUp">Структура работы</div>
+      <div class="fade-80 text-sm--center text-small text-sm-body-1 wow animate__fadeInUp">В нашем арсенале имеется широкий спектр
         профессиональных услуг</div>
     </div>
     <div class="steps">
-      <div class="steps-item">
+      <div class="steps-item wow animate__fadeInRight" data-wow-delay=".1s">
         <div class="steps-item-img">
           <img src="img/steps/1.png" alt="">
         </div>
         <div class="steps-item-line"></div>
-        <div class="text--demibold fade-60 mb-5">1 этап</div>
-        <div class="text-subtitle-1 mb-3">Замер</div>
-        <div class="text-body-2 fade-80">
+        <div class="text-body-2 text-sm-body-1 text--demibold fade-60 mb-3 mb-sm-5">1 этап</div>
+        <div class="text--demibold text-body-0 text-sm-subtitle-1 mb-3">Замер</div>
+        <div class="text-small text-sm-body-2 fade-80">
           Первый этап - замер <br>
           помещения технологом
         </div>
       </div>
-      <div class="steps-item">
+      <div class="steps-item wow animate__fadeInRight" data-wow-delay=".2s">
         <div class="steps-item-img">
           <img src="img/steps/2.png" alt="">
         </div>
         <div class="steps-item-line"></div>
-        <div class="text--demibold fade-60 mb-5">2 этап</div>
-        <div class="text-subtitle-1 mb-3">Подготовка</div>
-        <div class="text-body-2 fade-80">
+        <div class="text-body-2 text-sm-body-1 text--demibold fade-60 mb-3 mb-sm-5">2 этап</div>
+        <div class="text--demibold text-body-0 text-sm-subtitle-1 mb-3">Подготовка</div>
+        <div class="text-small text-sm-body-2 fade-80">
           Подготовка основания <br>
           к натягиванию полотна
         </div>
       </div>
-      <div class="steps-item">
+      <div class="steps-item wow animate__fadeInRight" data-wow-delay=".3s">
         <div class="steps-item-img">
           <img src="img/steps/3.png" alt="">
         </div>
         <div class="steps-item-line"></div>
-        <div class="text--demibold fade-60 mb-5">3 этап</div>
-        <div class="text-subtitle-1 mb-3">Разметка</div>
-        <div class="text-body-2 fade-80">
+        <div class="text-body-2 text-sm-body-1 text--demibold fade-60 mb-3 mb-sm-5">3 этап</div>
+        <div class="text--demibold text-body-0 text-sm-subtitle-1 mb-3">Разметка</div>
+        <div class="text-small text-sm-body-2 fade-80">
           Производится разметка <br>
           для крепления каркаса
         </div>
       </div>
-      <div class="steps-item">
+      <div class="steps-item wow animate__fadeInRight" data-wow-delay=".4s">
         <div class="steps-item-img">
           <img src="img/steps/4.png" alt="">
         </div>
         <div class="steps-item-line"></div>
-        <div class="text--demibold fade-60 mb-5">4 этап</div>
-        <div class="text-subtitle-1 mb-3">Основа</div>
-        <div class="text-body-2 fade-80">
+        <div class="text-body-2 text-sm-body-1 text--demibold fade-60 mb-3 mb-sm-5">4 этап</div>
+        <div class="text--demibold text-body-0 text-sm-subtitle-1 mb-3">Основа</div>
+        <div class="text-small text-sm-body-2 fade-80">
           Плёнка разогревается, <br>
           натягивается и фиксируется
         </div>
       </div>
-      <div class="steps-item">
+      <div class="steps-item wow animate__fadeInRight" data-wow-delay=".5s">
         <div class="steps-item-img">
           <img src="img/steps/5.png" alt="">
         </div>
         <div class="steps-item-line"></div>
-        <div class="text--demibold fade-60 mb-5">5 этап</div>
-        <div class="text-subtitle-1 mb-3">Маскировка</div>
-        <div class="text-body-2 fade-80">
+        <div class="text-body-2 text-sm-body-1 text--demibold fade-60 mb-3 mb-sm-5">5 этап</div>
+        <div class="text--demibold text-body-0 text-sm-subtitle-1 mb-3">Маскировка</div>
+        <div class="text-small text-sm-body-2 fade-80">
           Подготовка основания <br>
           к натягиванию полотна
         </div>
@@ -645,26 +583,26 @@
 
   <section class="features">
     <div class="section-header">
-      <div class="title text--center mb-2">Преимущества натяжных потолков</div>
-      <div class="fade-80 text--center text-small text-sm-body-1">Среди преимуществ натяжного потолка можно выделить
+      <div class="title text-sm--center mb-2 wow animate__fadeInUp">Преимущества натяжных потолков</div>
+      <div class="fade-80 text-sm--center text-small text-sm-body-1 wow animate__fadeInUp">Среди преимуществ натяжного потолка можно выделить
         следующее</div>
     </div>
     <div class="features-grid">
-      <div class="features-item features-item--1">
+      <div class="features-item features-item--1 wow animate__fadeInLeft">
         <div class="features-item-title">Скорость работы</div>
         <div class="features-item-desc">
           Натяжной потолок устанавливается
           не более чем за три дня
         </div>
       </div>
-      <div class="features-item features-item--2">
-        <div class="features-item-title text--center mx-auto">Экологичность</div>
+      <div class="features-item features-item--2 wow animate__fadeInRight">
+        <div class="features-item-title text-sm--center mx-auto">Экологичность</div>
         <div class="features-item-desc text--center">
           Во время установочных работ <br>
           практически нет грязи и мусора
         </div>
       </div>
-      <div class="features-item features-item--3">
+      <div class="features-item features-item--3 wow animate__fadeInLeft">
         <div class="features-item-title">Защита помещения</div>
         <div class="features-item-desc">
           Натяжные потолки защитят помещение от затопления. <br>
@@ -672,7 +610,7 @@
           в строгом соответствии с технологическими нормами
         </div>
       </div>
-      <div class="features-item features-item--4">
+      <div class="features-item features-item--4 wow animate__fadeInRight">
         <img src="img/features-4.jpg" alt="">
       </div>
     </div>
@@ -681,11 +619,11 @@
   <section class="form">
     <div class="form-block">
       <div class="form-content">
-        <div class="form-title">
+        <div class="form-title title wow animate__fadeInLeft">
           Получите бесплатный расчет <br>
           стоимости нашей работы
         </div>
-        <div class="form-list">
+        <div class="form-list wow animate__fadeInLeft">
           <div class="form-list-item">
             <img src="img/circle-check.png" alt="" class="mr-2">
             Технолог приедет в удобное для вас время
@@ -700,8 +638,8 @@
           </div>
         </div>
       </div>
-      <div class="form-fields">
-        <div class="text-h2 mb-2">Заявка на рассчет</div>
+      <div class="form-fields wow animate__fadeInRight">
+        <div class="text-subtitle-2 text-sm-h2 mb-2">Заявка на рассчет</div>
         <div class="mb-5">
           Оставьте заявку и мы свяжемся с Вами
           в ближайшее время
@@ -718,8 +656,8 @@
             <input type="text" class="form-input form-input-large">
           </div>
         </label>
-        <button class="btn btn--contur mt-8"><span>Заказать</span></button>
-        <div class="mt-8 fade-60 text-small">
+        <button class="btn btn--contur mt-4 mt-sm-8"><span>Заказать</span></button>
+        <div class="mt-4 mt-sm-8 fade-60 text-small">
           Отправляя форму Вы даете согласие на обработку
           Ваших персональных данных
         </div>
@@ -729,27 +667,28 @@
 
   <section class="reviews">
     <div class="section-header">
-      <div class="title text--center mb-2">Отзывы</div>
-      <div class="fade-80 text--center text-small text-sm-body-1">В нашем арсенале имеется широкий спектр
+      <div class="title text-sm--center mb-2 wow animate__fadeInUp">Отзывы</div>
+      <div class="fade-80 text-sm--center text-small text-sm-body-1 wow animate__fadeInUp">В нашем арсенале имеется широкий спектр
         профессиональных услуг</div>
     </div>
 
-    <div class="reviews-slider swiper">
+    <div class="reviews-slider swiper wow animate__fadeInUp">
       <div class="swiper-wrapper">
         <% for(let i=0; i < 8; i++){ %>
           <div class="reviews-item swiper-slide">
-            <div class="flex flex-align-center mb-8">
+            <div class="flex flex-align-center mb-5 mb-sm-8">
               <div class="reviews-item-avatar mr-5">
                 <img src="img/user.png" alt="">
               </div>
               <div>
-                <div class="text-subtitle-1 mb-1">Иван Абрамов</div>
-                <div class="fade-60">Краснодар</div>
+                <div class="text-body-1 text--demibold text-sm-subtitle-1 mb-1">Иван Абрамов</div>
+                <div class="fade-60 text-body-2 text-sm-body-1">Краснодар</div>
               </div>
             </div>
-            <div class="lh-1-5">
+            <div class="lh-1-5 text-body-2 text-sm-body-1">
               Много выбирали с мужем где заказать потолки .Выбрали Кубань Потолок, потому что все рассказали и
-              показали.Даже придумали нам проект собственный потолка -мы даже не знали что так можно обыграть обычный
+              показали.Даже придумали нам проект собственный потолка -мы даже не знали что так можно обыграть
+              обычный
               потолок! Спасибо вам.Рады что выбрали именно вас.Будем рекомендовать друзьям!
             </div>
           </div>
@@ -758,7 +697,91 @@
     </div>
   </section>
 
-  <footer class="footer"> </footer>
+  <section class="contact">
+    <div class="contact-content wow animate__fadeInLeft">
+      <div class="contact-title title">Контакты</div>
+      <div class="contact-item">
+        <div class="contact-item-img">
+          <img src="img/map-pin.svg" alt="">
+        </div>
+        <div class="contact-item-content">
+          <div class="text-body-2 fade-60">Наш адрес</div>
+          <div class="text-body-2 text--demibold">г. Краснодар, ул. Рестайловая 11</div>
+        </div>
+      </div>
+      <div class="contact-item mt-7">
+        <div class="contact-item-img">
+          <img src="img/mail.svg" alt="">
+        </div>
+        <div class="contact-item-content">
+          <div class="text-body-2 fade-60">Пишите по всем вопросам</div>
+          <div class="text-body-2 text--demibold">zhaluziipotolki@mail.ru</div>
+        </div>
+      </div>
+      <div class="contact-item mt-7">
+        <div class="contact-item-img">
+          <img src="img/phone-call.svg" alt="">
+        </div>
+        <div class="contact-item-content">
+          <div class="text-body-2 fade-60">Ежедневно с 09:00 до 22:00</div>
+          <div class="text-body-2 text--demibold">8 (962) 87-22-227</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-map" id="contact-map"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="img/footer-logo.png" alt="">
+    </div>
+    <div class="footer-soc">
+      <button class="btn btn--white btn--light btn-icon btn-small">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#telegramm" />
+        </svg>
+      </button>
+      <button class="btn btn--white btn--light btn-icon btn-small">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#vk" />
+        </svg>
+      </button>
+    </div>
+    <div class="contact-item">
+      <div class="contact-item-img">
+        <img src="img/map-pin-footer.svg" alt="">
+      </div>
+      <div class="contact-item-content">
+        <div class="text-body-2 fade-60">Наш адрес</div>
+        <div class="text-body-2 text--demibold">г. Краснодар, ул. Рестайловая 11</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-item-img">
+        <img src="img/mail-footer.svg" alt="">
+      </div>
+      <div class="contact-item-content">
+        <div class="text-body-2 fade-60">Пишите по всем вопросам</div>
+        <div class="text-body-2 text--demibold">zhaluziipotolki@mail.ru</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-item-img">
+        <img src="img/phone-call-footer.svg" alt="">
+      </div>
+      <div class="contact-item-content">
+        <div class="text-body-2 fade-60">Ежедневно с 09:00 до 22:00</div>
+        <div class="text-body-2 text--demibold">8 (962) 87-22-227</div>
+      </div>
+    </div>
+
+  </footer>
+
+  <section class="bottom">
+    <div class="text-body-2 fade-60">Натяжные потолки, жалюзи, карнизы, люстры, светильники</div>
+    <div class="text-body-2 fade-60">©2023</div>
+  </section>
+
 </body>
 
 </html>

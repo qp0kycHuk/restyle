@@ -12,6 +12,7 @@ const init = () => {
   const defaultOptions = {
     dragToClose: false,
     mainClass: 'fancybox-custom-modal',
+    type: 'ajax',
     on: {
       done: (fancybox, slide) => {
       }
