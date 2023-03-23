@@ -50,21 +50,30 @@ function loadHandler() {
 
 
 	// examples sliders
+	const examples = document.querySelectorAll('.examples-items-slider');
+	examples.forEach((block) => {
+		const $swiper = block.querySelector('.examples-items-slider-swiper')
+		const $prev = block.querySelector('.slider-prev')
+		const $next = block.querySelector('.slider-next')
+		const $pagination = block.querySelector('.examples-items-pagination')
 
-	new Swiper('.examples-items-slider>.swiper', {
-		speed: 500,
-		spaceBetween: 60,
-		slidesPerView: 1,
-		noSwipingClass: 'top-no-swiping',
-		pagination: {
-			el: '.examples-items-pagination',
-			clickable: true
-		},
-		navigation: {
-			prevEl: '.examples-items-slider .slider-prev',
-			nextEl: '.examples-items-slider .slider-next',
-		}
+		new Swiper($swiper, {
+			speed: 500,
+			spaceBetween: 60,
+			slidesPerView: 1,
+			noSwipingClass: 'top-no-swiping',
+			pagination: {
+				el: $pagination,
+				clickable: true
+			},
+			navigation: {
+				prevEl: $prev,
+				nextEl: $next,
+			}
+		})
 	})
+
+
 
 
 	const items = document.querySelectorAll('.examples-item')

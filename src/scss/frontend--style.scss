@@ -3,11 +3,6 @@
 
 :root {
 
-	@each $key,
-	$value in $colors {
-		@include getColors($value, $key);
-	}
-
 	--bg1: #F1F1F8;
 	--bg2: #F4F5F6;
 	--bg3: #FFFFFF;
@@ -36,22 +31,27 @@
 	--zi-l7: 327;
 	--zi-l8: 328;
 	--zi-l9: 329;
+
+	@each $key,
+	$value in $colors {
+		@include getColors($value, $key);
+	}
 }
 
 [data-theme="dark"] {
-	@include getColors(#ffffff, text);
 
 	--bg1: #181818;
 	--bg2: #282828;
 	--bg3: #323232;
+	@include getColors(#ffffff, text);
 }
 
 body {
-	background: var(--bg1);
-	color: var(--color-text);
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	min-height: 100vh;
+	background: var(--bg1);
+	color: var(--color-text);
 
 	* {
 		font-family: var(--font-base);
@@ -91,8 +91,8 @@ section {
 }
 
 .title {
-	font-weight: 600;
 	font-size: 48px;
+	font-weight: 600;
 
 	@media(max-width:$lg) {
 		font-size: 38px;
@@ -123,15 +123,15 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-top: 36px;
-	padding-bottom: 36px;
 
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: var(--zi-l1);
+	padding-top: 36px;
+	padding-bottom: 36px;
 	transition: .2s ease;
+	z-index: var(--zi-l1);
 
 	@media(max-width:$sm) {
 		padding-top: 20px;
@@ -139,9 +139,9 @@ section {
 	}
 
 	&.scrolled {
-		background: #fff;
 		padding-top: 15px;
 		padding-bottom: 15px;
+		background: #fff;
 
 		@media(max-width:$sm) {
 			padding-top: 10px;
@@ -172,14 +172,14 @@ section {
 
 	&-soc {
 		display: flex;
-		gap: 12px;
 		margin-left: auto;
+		gap: 12px;
 	}
 
 	&-phone {
-		font-weight: 700;
-		font-size: 18px;
 		margin-left: 70px;
+		font-size: 18px;
+		font-weight: 700;
 
 		@media(max-width:$md) {
 			margin-left: 20px;
@@ -194,11 +194,11 @@ section {
 }
 
 .started {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 	position: relative;
 	height: 950px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	padding-top: 150px;
 	padding-bottom: 50px;
 
@@ -212,20 +212,20 @@ section {
 
 	&-content {
 		display: flex;
-		flex-direction: column;
 		align-items: flex-start;
+		flex-direction: column;
 		position: relative;
 		z-index: 2;
 	}
 
 	&-title {
-		font-weight: 700;
-		font-size: 48px;
-		line-height: 1.1;
 		background: linear-gradient(270.31deg, rgba(253, 143, 217, 0.4) 0.13%, rgba(255, 227, 246, 0) 64.36%), #0A0A0A;
 		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
 		background-clip: text;
+		font-size: 48px;
+		font-weight: 700;
+		line-height: 1.1;
+		-webkit-text-fill-color: transparent;
 		text-fill-color: transparent;
 
 		@media(max-width:$md) {
@@ -249,8 +249,8 @@ section {
 	&-list {
 		display: flex;
 		flex-direction: column;
-		gap: 24px;
 		margin-top: 58px;
+		gap: 24px;
 
 		@media(max-width:$md) {
 			gap: 16px;
@@ -284,30 +284,30 @@ section {
 	}
 
 	&-gift {
+		width: 524px;
+		max-width: 100%;
+		margin-top: 58px;
+		padding: 36px 32px;
 		background: url("../img/started-gift.png") no-repeat right bottom / contain, #FFFFFF;
 		background:
 			url("../img/started-gift.png") no-repeat right bottom / contain,
 			radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
-		box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.12);
 		border: 2px solid rgba(255, 255, 255, 0.33);
 		// border-image-source: linear-gradient(104.71deg, #FFFFFF 1.09%, rgba(255, 255, 255, 0.33) 100%);
 
 
 		border-radius: 24px;
 		border-radius: 24px;
-		padding: 36px 32px;
-		width: 524px;
-		max-width: 100%;
-		margin-top: 58px;
+		box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.12);
 
 		@media(max-width:$sm) {
 			width: calc(100% + 30px);
 			max-width: calc(100% + 30px);
-			margin-left: -15px;
-			border-radius: 0;
-			border: none;
-			box-shadow: none;
 			margin-top: 120px;
+			margin-left: -15px;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
 		}
 	}
 }
@@ -321,21 +321,21 @@ section {
 		@media(min-width:$sm) {
 			padding: 32px;
 			background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
-			box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.12);
 			border-radius: 24px;
+			box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.12);
 		}
 	}
 
 	&-fields {
-		background: #FFFFFF;
-		border-radius: 8px;
-		padding: 24px;
 		display: flex;
 		flex-direction: column;
-		gap: 22px;
 		width: 530px;
 		height: 324px;
 		overflow: auto;
+		padding: 24px;
+		background: #FFFFFF;
+		border-radius: 8px;
+		gap: 22px;
 
 		@media(max-width:$lg) {
 			width: 100%;
@@ -360,15 +360,15 @@ section {
 		}
 
 		&-item {
-			border-radius: 24px;
 			overflow: hidden;
+			border-radius: 24px;
 		}
 	}
 
 	&-btns {
 		display: flex;
-		gap: 8px;
 		margin-top: 32px;
+		gap: 8px;
 	}
 
 	&.stopped &-next {
@@ -378,23 +378,23 @@ section {
 }
 
 .examples {
-	background: rgba(255, 255, 255, 0.6);
 	overflow: hidden;
+	background: rgba(255, 255, 255, 0.6);
 
 	&-items {
 		&-slider {
 			&>.swiper {
-				padding: 40px;
-				margin: -40px;
 				width: calc(100% + 80px);
+				margin: -40px;
+				padding: 40px;
 			}
 		}
 
 		&-pagination {
+			--swiper-theme-color: var(--color-text);
 			display: flex;
 			justify-content: center;
 			margin-top: 24px;
-			--swiper-theme-color: var(--color-text)
 		}
 	}
 
@@ -408,8 +408,8 @@ section {
 		}
 
 		@media(max-width:$sm) {
-			gap: 10px;
 			justify-content: flex-start;
+			gap: 10px;
 		}
 	}
 
@@ -421,30 +421,35 @@ section {
 			--size: 40px;
 			font-size: 14px;
 		}
+
+		&.tab-active{
+			background: #0A0A0A !important;
+			color: #fff;
+		}
 	}
 }
 
 .examples-item {
 	display: flex;
-	gap: 22px;
+	overflow: hidden;
 	padding: 32px;
 	background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
-	box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.12);
-	border-radius: 24px;
 	border: 2px solid rgba(255, 255, 255, 0.33);
-	overflow: hidden;
+	border-radius: 24px;
+	box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.12);
+	gap: 22px;
 
 	@media(max-width:$lg) {
 		flex-direction: column;
-		padding-left: 20px;
 		padding-right: 20px;
+		padding-left: 20px;
 	}
 
 	@media(max-width:$sm) {
 		padding-top: 0;
-		border-radius: 16px;
-		padding-left: 15px;
 		padding-right: 15px;
+		padding-left: 15px;
+		border-radius: 16px;
 	}
 
 
@@ -455,31 +460,31 @@ section {
 	&-slider {
 		width: 542px;
 		height: 500px;
-		border-radius: 24px;
 		overflow: hidden;
+		border-radius: 24px;
 
 		@media(max-width:$lg) {
 			width: calc(100% + 40px);
-			margin-left: -20px;
-			padding-left: 40px;
-			padding-right: 40px;
-			border-radius: 0;
 			height: 300px;
+			margin-left: -20px;
+			padding-right: 40px;
+			padding-left: 40px;
+			border-radius: 0;
 		}
 
 		@media(max-width:$sm) {
-			padding-left: 0;
-			padding-right: 0;
-			height: 250px;
 			width: calc(100% + 30px);
+			height: 250px;
 			margin-left: -15px;
+			padding-right: 0;
+			padding-left: 0;
 		}
 	}
 
 	&-slide {
-		border-radius: 24px;
-		overflow: hidden;
 		width: 100%;
+		overflow: hidden;
+		border-radius: 24px;
 
 		@media(max-width:$sm) {
 			border-radius: 0;
@@ -496,11 +501,11 @@ section {
 
 	&-thumbs {
 		position: absolute;
+		bottom: 24px;
 		left: 28px;
 		width: calc(100% - 56px);
-		bottom: 24px;
-		z-index: 2;
 		cursor: pointer;
+		z-index: 2;
 
 		@media(max-width:$lg) {
 			display: none;
@@ -508,10 +513,10 @@ section {
 	}
 
 	&-thumb {
-		height: 75px;
-		border-radius: 8px;
-		overflow: hidden;
 		max-width: calc(25% - 24px * 3 / 4);
+		height: 75px;
+		overflow: hidden;
+		border-radius: 8px;
 
 		img {
 			width: 100%;
@@ -526,20 +531,20 @@ section {
 	}
 
 	&-content {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
 		padding: 32px 40px 40px;
 		background: linear-gradient(310.4deg, #442929 0%, rgba(68, 41, 41, 0) 100%), #0A0A0A;
-		color: #fff;
 		border-radius: 24px;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
+		color: #fff;
 
 		@media(max-width:$sm) {
 			padding: 0;
+			background: none;
+			border: none;
 			border-radius: 0;
 			box-shadow: none;
-			border: none;
-			background: none;
 			color: var(--color-text);
 		}
 	}
@@ -563,25 +568,25 @@ section {
 	}
 
 	&-review {
+		width: 100%;
+		padding: 24px;
 		background:
 			url("../img/example-review-dots.png") no-repeat right bottom,
 			linear-gradient(273.8deg, rgba(79, 255, 128, 0.09) 0%, rgba(79, 255, 128, 0) 65.53%), rgba(62, 63, 64, 0.3);
 		border-radius: 24px;
-		padding: 24px;
-		width: 100%;
 
 		@media(max-width:$sm) {
 			width: calc(100% + 30px);
 			margin-left: -15px;
-			border-radius: 0;
 			padding: 15px;
+			border-radius: 0;
 		}
 
 		&-quote {
+			display: inline-block;
+			margin-bottom: -24px;
 			font-size: 48px;
 			line-height: 1;
-			margin-bottom: -24px;
-			display: inline-block;
 
 			@media(max-width:$sm) {
 				display: none;
@@ -595,22 +600,22 @@ section {
 }
 
 .services-item {
+	position: relative;
+	padding: 8px;
 	background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
-	box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.08);
 
 	border-radius: 24px;
-	padding: 8px;
+	box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.08);
 	cursor: pointer;
-	position: relative;
 
 	@media(max-width:$sm) {
 		border-radius: 16px;
 	}
 
 	&-img {
-		border-radius: 22px;
-		overflow: hidden;
 		height: 204px;
+		overflow: hidden;
+		border-radius: 22px;
 
 		@media(max-width:$sm) {
 			height: 150px;
@@ -638,14 +643,14 @@ section {
 
 	&-item {
 		display: flex;
-		flex-direction: column;
 		justify-content: flex-end;
-		height: 464px;
+		flex-direction: column;
 		position: relative;
-		border-radius: 24px;
-		overflow: hidden;
 		max-width: 400px;
+		height: 464px;
+		overflow: hidden;
 		margin: 0 auto;
+		border-radius: 24px;
 
 		@media(max-width:$sm) {
 			border-radius: 16px;
@@ -663,12 +668,12 @@ section {
 		}
 
 		&-content {
-			position: relative;
-			z-index: 2;
-			color: #fff;
-			padding: 32px 24px;
 			display: flex;
 			align-items: center;
+			position: relative;
+			padding: 32px 24px;
+			color: #fff;
+			z-index: 2;
 
 			@media(max-width:$sm) {
 				padding: 16px;
@@ -676,15 +681,15 @@ section {
 		}
 
 		&-min {
-			margin-left: auto;
 			position: relative;
+			margin-left: auto;
 
 			&:before {
 				content: '';
-				border: 1px solid #FF83BE;
-				border-radius: 24px;
 				position: absolute;
 				inset: -5px;
+				border: 1px solid #FF83BE;
+				border-radius: 24px;
 			}
 
 			img {
@@ -702,27 +707,27 @@ section {
 	color: #fff;
 
 	&-item {
+		position: relative;
+		padding: 8px;
 		background: #202021;
-		color: #fff;
-		box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.08);
 
 		border-radius: 24px;
-		padding: 8px;
+		box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.08);
+		color: #fff;
 		cursor: pointer;
-		position: relative;
-
-		&:hover {
-			background: #333334;
-		}
 
 		@media(max-width:$sm) {
 			border-radius: 16px;
 		}
 
+		&:hover {
+			background: #333334;
+		}
+
 		&-img {
-			border-radius: 22px;
-			overflow: hidden;
 			height: 204px;
+			overflow: hidden;
+			border-radius: 22px;
 
 			@media(max-width:$sm) {
 				height: 150px;
@@ -737,10 +742,10 @@ section {
 		}
 
 		&-content {
-			padding: 16px;
 			display: flex;
-			flex-direction: column;
 			align-items: flex-start;
+			flex-direction: column;
+			padding: 16px;
 
 			@media(max-width:$sm) {
 				padding: 12px 0 4px;
@@ -750,24 +755,24 @@ section {
 		&-cost {
 			background: linear-gradient(270.31deg, rgba(117, 191, 243, 0.8) 0.13%, rgba(117, 191, 243, 0) 64.36%), #FFC4EB;
 			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
 			background-clip: text;
+			-webkit-text-fill-color: transparent;
 			text-fill-color: transparent;
 		}
 
 		&-country {
 			display: flex;
-			gap: 8px;
+			padding: 8px;
 			background: rgba(62, 63, 64, 0.3);
 			border-radius: 8px;
-			padding: 8px;
+			gap: 8px;
 		}
 	}
 }
 
 .pray {
-	background: #FFFFFF;
 	overflow: hidden;
+	background: #FFFFFF;
 
 	@media(max-width:$md) {
 		padding-top: 0;
@@ -792,24 +797,24 @@ section {
 
 		@media(max-width:$md) {
 			width: calc(100% + 30px);
-			padding: 24px 15px;
 			margin-left: -15px;
+			padding: 24px 15px;
 		}
 
 		&-cards {
-			min-width: 674px;
-			width: 674px;
-			margin-left: 52px;
 
 			display: grid;
-			grid-gap: 16px;
 			grid-template-columns: 2fr 3fr;
+			grid-gap: 16px;
+			width: 674px;
+			min-width: 674px;
+			margin-left: 52px;
 
 			@media(max-width:$lg) {
 				width: 100%;
 				min-width: 0;
-				margin-left: 0;
 				margin-top: 40px;
+				margin-left: 0;
 			}
 
 			@media(max-width:$md) {
@@ -818,9 +823,9 @@ section {
 		}
 
 		&-clients {
+			padding: 24px;
 			background: #FFFFFF;
 			border-radius: 24px;
-			padding: 24px;
 
 			@media(max-width:$sm) {
 				border-radius: 18px;
@@ -828,13 +833,13 @@ section {
 		}
 
 		&-card {
+			padding: 24px;
 			background:
 				url("../img/pray-card-dots.png") no-repeat top right,
 				linear-gradient(146.45deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%),
 				#63B56B;
-			color: #fff;
 			border-radius: 24px;
-			padding: 24px;
+			color: #fff;
 
 			@media(max-width:$sm) {
 				border-radius: 18px;
@@ -843,8 +848,8 @@ section {
 
 		&-img {
 			grid-column: 1/-1;
-			border-radius: 24px;
 			overflow: hidden;
+			border-radius: 24px;
 
 			@media(max-width:$sm) {
 				border-radius: 18px;
@@ -871,16 +876,16 @@ section {
 		align-items: center;
 
 		&-img {
-			background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
-			border-radius: 18px;
-			box-shadow: 0px 20px 40px 0px #02005314;
-			border: 2px solid rgba(255, 255, 255, 0.33);
-			width: 54px;
-			height: 54px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			width: 54px;
+			height: 54px;
 			margin-right: 18px;
+			background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+			border: 2px solid rgba(255, 255, 255, 0.33);
+			border-radius: 18px;
+			box-shadow: 0px 20px 40px 0px #02005314;
 		}
 	}
 
@@ -889,7 +894,7 @@ section {
 
 .steps {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(6, 1fr);
 
 
 	@media(max-width:$lg) {
@@ -904,23 +909,28 @@ section {
 
 	&-item {
 		display: flex;
-		flex-direction: column;
 		align-items: flex-start;
+		flex-direction: column;
 
 		&-img {
+			width: 138px;
+			height: 136px;
+			padding: 8px;
 			background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+			border: 2px solid rgba(255, 255, 255, 0.33);
 			border-radius: 24px;
 			box-shadow: 0px 20px 20px 0px #0200530F;
-			border: 2px solid rgba(255, 255, 255, 0.33);
-			padding: 8px;
-
+			
 			@media(max-width:$sm) {
-				border-radius: 18px;
 				width: 95%;
+				border-radius: 18px;
 			}
 
 			img {
+				width: 100%;
+				height: 100%;
 				border-radius: 22px;
+				object-fit: cover;
 
 				@media(max-width:$sm) {
 					border-radius: 16px;
@@ -930,11 +940,11 @@ section {
 		}
 
 		&-line {
-			border-top: 1px solid #D9D9D9;
+			position: relative;
 			width: 100%;
 			margin-top: 16px;
 			margin-bottom: 40px;
-			position: relative;
+			border-top: 1px solid #D9D9D9;
 
 			@media(max-width:$sm) {
 				margin-bottom: 20px;
@@ -942,20 +952,21 @@ section {
 
 			&:before {
 				content: '';
-				background: #FFFFFF;
-				border: 1px solid #D9D9D9;
 				position: absolute;
+				top: calc(50% - 5px);
+				left: 0;
 				width: 10px;
 				height: 10px;
+				background: #FFFFFF;
+				border: 1px solid #D9D9D9;
 				border-radius: 50%;
-				left: 0;
-				top: calc(50% - 5px);
 			}
 		}
 	}
 }
 
 .features {
+	overflow: hidden;
 	background:
 		url("../img/features-dots-1.png") no-repeat right top,
 		url("../img/features-dots-2.png") no-repeat left bottom,
@@ -963,7 +974,6 @@ section {
 		radial-gradient(at 100% 100%, rgba(143, 82, 81, 0.2), rgba(0, 0, 0, 0) 40%),
 		#0A0A0A;
 	color: #fff;
-	overflow: hidden;
 
 	@media(max-width:$lg) {
 		background:
@@ -983,8 +993,8 @@ section {
 	}
 
 	&-item {
-		border-radius: 24px;
 		overflow: hidden;
+		border-radius: 24px;
 		color: var(--color-text);
 
 		@media(max-width:$sm) {
@@ -994,27 +1004,27 @@ section {
 		&--1 {
 			width: 414px;
 			padding: 54px 42px;
+			padding-bottom: 296px;
 			background:
 				url("../img/features-1.png") no-repeat bottom,
 				linear-gradient(180deg, rgba(0, 0, 0, 0) 25.96%, #312217 55.22%),
 				#0A0A0A;
 			color: #fff;
-			padding-bottom: 296px;
 
 			@media(max-width:$lg) {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
 				order: -10;
 				width: calc(50% - 8px);
 				padding: 24px 15px;
-				padding-bottom: 100px;
 				padding-top: 80px;
-				display: flex;
-				flex-direction: column;
-				text-align: center;
-				align-items: center;
+				padding-bottom: 100px;
 				background:
 					// url("../img/features-1.png") no-repeat bottom,
 					linear-gradient(180deg, rgba(0, 0, 0, 0) 25.96%, #312217 55.22%),
 					#0A0A0A;
+				text-align: center;
 
 				br {
 					display: none;
@@ -1028,20 +1038,20 @@ section {
 
 			@media(max-width:$sm) {
 				width: 100%;
+				padding-top: 32px;
+				padding-bottom: 60vw;
 				background:
 					url("../img/features-1.png") no-repeat bottom / contain,
 					linear-gradient(180deg, rgba(0, 0, 0, 0) 25.96%, #312217 55.22%),
 					#0A0A0A;
-				padding-bottom: 60vw;
-				padding-top: 32px;
 			}
 		}
 
 		&--1 &-title {
 			background: linear-gradient(270.31deg, rgba(117, 191, 243, 0.8) 0.13%, rgba(117, 191, 243, 0) 64.36%), #FFE3F6;
 			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
 			background-clip: text;
+			-webkit-text-fill-color: transparent;
 			text-fill-color: transparent;
 		}
 
@@ -1060,8 +1070,8 @@ section {
 		&--2 &-title {
 			background: linear-gradient(270.31deg, rgba(80, 215, 85, 0.5) 0.13%, rgba(243, 223, 117, 0) 64.36%), #0A0A0A;
 			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
 			background-clip: text;
+			-webkit-text-fill-color: transparent;
 			text-fill-color: transparent;
 		}
 
@@ -1085,8 +1095,8 @@ section {
 		&--3 &-title {
 			background: linear-gradient(270.31deg, rgba(117, 191, 243, 0.8) 0.13%, rgba(117, 191, 243, 0) 64.36%), #FFE3F6;
 			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
 			background-clip: text;
+			-webkit-text-fill-color: transparent;
 			text-fill-color: transparent;
 		}
 
@@ -1110,11 +1120,11 @@ section {
 		}
 
 		&-title {
-			font-weight: 600;
-			font-size: 32px;
-			margin-bottom: 18px;
 			width: max-content;
 			max-width: 100%;
+			margin-bottom: 18px;
+			font-size: 32px;
+			font-weight: 600;
 
 			@media(max-width:$md) {
 				font-size: 24px;
@@ -1138,30 +1148,30 @@ section {
 	}
 
 	&-block {
-		border-radius: 24px;
-		background: url("../img/form-block-bg.jpg") no-repeat center / cover;
 		display: flex;
 		padding: 16px;
+		background: url("../img/form-block-bg.jpg") no-repeat center / cover;
+		border-radius: 24px;
 
 		@media(max-width:$lg) {
 			flex-direction: column;
 		}
 
 		@media(max-width:$md) {
-			border-radius: 0;
 			padding: 40px 15px;
+			border-radius: 0;
 		}
 	}
 
 	&-fields {
-		background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
-		box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.08);
-		backdrop-filter: blur(10px);
-
-		border-radius: 24px;
 		width: 426px;
 		margin-left: auto;
 		padding: 48px;
+		background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+		backdrop-filter: blur(10px);
+
+		border-radius: 24px;
+		box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.08);
 
 		@media(max-width:$lg) {
 			margin-right: auto;
@@ -1175,9 +1185,9 @@ section {
 	}
 
 	&-title {
-		font-weight: 600;
-		font-size: 32px;
 		margin-bottom: 32px;
+		font-size: 32px;
+		font-weight: 600;
 
 		@media(max-width:$md) {
 			font-size: 24px;
@@ -1205,8 +1215,8 @@ section {
 		padding: 48px 64px;
 
 		@media(max-width:$md) {
-			padding: 0;
 			margin-bottom: 32px;
+			padding: 0;
 		}
 	}
 }
@@ -1225,13 +1235,13 @@ section {
 	}
 
 	&-item {
-		background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
-		box-shadow: 0px 20px 40px 0px #02005314;
-		border-radius: 24px;
-		padding: 46px 32px;
 
 		// for slider
 		width: 360px;
+		padding: 46px 32px;
+		background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+		border-radius: 24px;
+		box-shadow: 0px 20px 40px 0px #02005314;
 
 		@media(max-width:$sm) {
 			width: 280px;
@@ -1240,14 +1250,14 @@ section {
 		}
 
 		&-avatar {
-			width: 41px;
-			height: 41px;
-			background: linear-gradient(310.4deg, #321F1F 0%, rgba(50, 31, 31, 0) 100%), #0A0A0A;
-			border-radius: 50%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			position: relative;
+			width: 41px;
+			height: 41px;
+			background: linear-gradient(310.4deg, #321F1F 0%, rgba(50, 31, 31, 0) 100%), #0A0A0A;
+			border-radius: 50%;
 
 			&:before {
 				content: '';
@@ -1268,14 +1278,14 @@ section {
 	}
 
 	&-content {
-		background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
-		box-shadow: 0px 20px 40px 0px #02005314;
-		backdrop-filter: blur(20px);
-		border-radius: 24px;
-		border: 2px solid rgba(255, 255, 255, 0.33);
-		padding: 52px 32px;
-		width: 370px;
 		position: relative;
+		width: 370px;
+		padding: 52px 32px;
+		background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+		backdrop-filter: blur(20px);
+		border: 2px solid rgba(255, 255, 255, 0.33);
+		border-radius: 24px;
+		box-shadow: 0px 20px 40px 0px #02005314;
 		z-index: 2;
 
 		@media(max-width:$md) {
@@ -1339,19 +1349,19 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background: #0A0A0A;
-	color: #fff;
 	padding-top: 12px;
 	padding-bottom: 12px;
+	background: #0A0A0A;
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	color: #fff;
 }
 
 .dialog-form {
-	background: #FFFFFF;
-	border-radius: 24px;
 	width: 426px;
 	max-width: 100%;
 	padding: 48px;
+	background: #FFFFFF;
+	border-radius: 24px;
 
 	@media(max-width:$sm) {
 		width: 100%;
@@ -1361,10 +1371,10 @@ section {
 }
 
 .dialog-policy {
-	background: #FFFFFF;
-	box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.12);
-	border-radius: 24px;
 	padding: 48px;
+	background: #FFFFFF;
+	border-radius: 24px;
+	box-shadow: 0px 20px 40px rgba(2, 0, 83, 0.12);
 
 	@media(max-width:$sm) {
 		width: 100%;
@@ -1373,16 +1383,16 @@ section {
 	}
 
 	&-title {
-		font-weight: 600;
-		font-size: 32px;
-		background: linear-gradient(270.31deg, rgba(80, 215, 85, 0.5) 0.13%, rgba(243, 223, 117, 0) 64.36%), #0A0A0A;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-fill-color: transparent;
 		width: max-content;
 		max-width: 100%;
 		margin-bottom: 28px;
+		background: linear-gradient(270.31deg, rgba(80, 215, 85, 0.5) 0.13%, rgba(243, 223, 117, 0) 64.36%), #0A0A0A;
+		-webkit-background-clip: text;
+		background-clip: text;
+		font-size: 32px;
+		font-weight: 600;
+		-webkit-text-fill-color: transparent;
+		text-fill-color: transparent;
 
 		@media(max-width:$md) {
 			font-size: 24px;
