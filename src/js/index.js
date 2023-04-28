@@ -181,12 +181,12 @@ function mapsInit() {
 
 	ymaps.load('https://api-maps.yandex.ru/2.1/?lang=ru_RU').then(maps => {
 		const map = new maps.Map('contact-map', {
-			center: [45.040661, 38.988896],
-			zoom: 16
+			center: [45.06611530619296,38.985679499999996],
+			zoom: 11
 
 		})
 
-		const placemark = new maps.Placemark([45.040661, 38.988896], {}, {
+		const placemark = new maps.Placemark([45.06611530619296,38.985679499999996], {}, {
 
 			iconLayout: 'default#image',
 			iconImageHref: '../img/geo.png',
